@@ -21,7 +21,7 @@ la dieta de Grogu*/
             {nombre: "zanahoria", tipo: "vegetales", calorias: 199},
             {nombre: "platano", tipo: "arinas", calorias: 243},
             {nombre: "frijol", tipo: "vegetales", calorias: 277},
-            {nombre: "papa", tipo: "vegetales", calorias: 324},
+            {nombre: "papa", tipo: "vegetales", calorias: 124},
             {nombre: "bocadillo", tipo: "azucares", calorias: 500},
             {nombre: "leche", tipo: "lacteos", calorias: 500},
             {nombre: "yogurt", tipo: "lacteos", calorias: 230},
@@ -47,7 +47,7 @@ la dieta de Grogu*/
             {nombre: "pera", tipo: "frutas", calorias: 200},
             {nombre: "manzana", tipo: "frutas", calorias: 187},
             {nombre: "aguacate", tipo: "frutas", calorias: 170},
-            {nombre: "ochuas", tipo: "vegetales", calorias: 432},
+            {nombre: "ochuas", tipo: "vegetales", calorias: 102},
             {nombre: "lulo", tipo: "frutas", calorias: 134},
             {nombre: "mandarina", tipo: "frutas", calorias: 103},
             {nombre: "naranja", tipo: "fruta", calorias: 150},
@@ -55,19 +55,19 @@ la dieta de Grogu*/
             {nombre: "piña", tipo: "frutas", calorias: 170},
             {nombre: "rabano", tipo: "vegetales", calorias: 234},
             {nombre: "esparrago", tipo: "vegetales", calorias: 180},
-            {nombre: "puerro", tipo: "vegetales", calorias: 232},
+            {nombre: "puerro", tipo: "vegetales", calorias: 132},
             {nombre: "apio", tipo: "vegetales", calorias: 150},
             {nombre: "espinaca", tipo: "vegetales", calorias: 432},
             {nombre: "rúcula", tipo: "vegetales", calorias: 235},
             {nombre: "coliflor", tipo: "vegetales", calorias: 215},
-            {nombre: "brocoli", tipo: "vegetales", calorias: 355},                        
+            {nombre: "brocoli", tipo: "vegetales", calorias: 125},                        
         ]  
         // console.log(alimentoDetipovegetal) 
         function clasificarDieta (alimentos, callback){
 
             setTimeout(function(){
                 let alimentoDetipovegetal=alimentos.filter(function(alimento){
-                    return(alimento.tipo = 'vegetal' && alimento.calorias > 200)
+                    return(alimento.tipo = "vegetales" && alimento.calorias > 200)
         
                 })
                 callback(alimentoDetipovegetal)
