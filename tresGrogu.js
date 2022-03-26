@@ -9,8 +9,7 @@ callback debe permitir entregar la sumatoria de niveles de
 energía entregados por los alimentos vegetales consumidos en 
 la dieta de Grogu*/
 
-function clasificarDieta( callback){
-    setTimeout(function(){
+
         let alimentos =[
             {nombre: "ají", tipo: "vegetales", calorias: 234},
             {nombre: "repollo", tipo: "vegetales", calorias: 376},
@@ -62,14 +61,28 @@ function clasificarDieta( callback){
             {nombre: "rúcula", tipo: "vegetales", calorias: 235},
             {nombre: "coliflor", tipo: "vegetales", calorias: 215},
             {nombre: "brocoli", tipo: "vegetales", calorias: 355},                        
-        ]
-        let alimentoDetipovegetal=alimentos.filter(function(alimento){
-            return(alimento.tipo = "vegetal" && alimento.calorias > 10)
-        })
-        callback(alimentoDetipovegetal)
-        },5000)
-}
+        ]  
+        // console.log(alimentoDetipovegetal) 
+        function clasificarDieta (alimentos, callback){
 
+            setTimeout(function(){
+                let alimentoDetipovegetal=alimentos.filter(function(alimento){
+                    return(alimento.tipo = 'vegetal' && alimento.calorias > 200)
+        
+                })
+                callback(alimentoDetipovegetal)
+            },5000)
+            
+        }
+    
+        clasificarDieta(alimentos,function (alimentoDetipovegetal){
+            let sumaCalorias = 0
+            alimentoDetipovegetal.forEach(function(finalvegetal){
+                sumaCalorias = sumaCalorias + finalvegetal.calorias
+            })
+            console.log(alimentoDetipovegetal)
+            console.log("El total de calorias que debe de consumir es de: "+sumaCalorias)
+        })
 // llamamos la funcion 
 
 
