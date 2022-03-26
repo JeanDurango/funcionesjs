@@ -67,7 +67,7 @@ la dieta de Grogu*/
 
             setTimeout(function(){
                 let alimentoDetipovegetal=alimentos.filter(function(alimento){
-                    return(alimento.tipo = "vegetales" && alimento.calorias > 200)
+                    return(alimento.tipo == "vegetales" && alimento.calorias > 200)
         
                 })
                 callback(alimentoDetipovegetal)
