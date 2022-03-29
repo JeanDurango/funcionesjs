@@ -1,37 +1,40 @@
   
-    let alimetos = ["pollo","cerdo","pavo","res","pescado","lechuga","zanahoria","manzana","uvas","grillos","mariposas","cucarachas","gusanos"]
-    
-    let alimentosVegetales = []
-
-    for(let i=0; i<=50; i++){
+ 
+  let nombres = ["pollo","cerdo","pavo","res","lechuga","berenjena","aji","tomate","mariposas","grillos","gusanos","lombris"]
+  let tipos = ["animales","vegetales","insectos"]
+  let alimentos = []
+  
+ for(let i=0; i<=50; i++){  
+       let alimento={}
+       alimento.nombre = nombres [Math.floor(Math.random() * nombres.length)]
+       if (alimento.nombre == "pollo"  || alimento.nombre == "cerdo" ||  alimento.nombre == "pavo" || alimento.nombre ==  "res"){
+           alimento.tipo = "animales"
+       }else if(alimento.nombre == "tomate"  || alimento.nombre == "aji" ||  alimento.nombre == "berenjena" || alimento.nombre ==  "lechuga"){
+           alimento.tipo = "vegetales"
+       }else{
+           alimento.tipo = "insectos"
+       }
+       alimento.calorias = Math.floor(Math.random() * 500)     
+       alimentos.push(alimento)
        
-        
-        let alimentoVegetal ={}
+   }
+   
 
-        alimentoVegetal.nombre =alimetos[Math.floor(Math.random() * alimetos.length)]
-        alimentoVegetal.calorias = Math.floor(Math.random() * (500 - 100) + 100 )
-        
-        alimentosVegetales.push(alimentoVegetal)
-    }
-    // console.log(alimentosVegetales)
+function clasificarDieta (alimentos,callback){
+ setTimeout(()=>{
+    let totalalimentosvegetales = alimentos.filter((alimento)=>{
+     return(alimento.tipo ==  "vegetales" && alimento.calorias >= 200)
 
-function clasificarDieta (alimentosVegetales, callback){
-
-    setTimeout(()=>{
-       let totaltipovegetales = alimentosVegetales.filter((vegetales)=>{
-            return(vegetales.nombre ===('lechuga','espicana','berebjena') && vegetales.calorias >= 200)
-
-        })
-        callback(totaltipovegetales)
-    },2000)
-    
+       })
+       callback(totalalimentosvegetales)
+   },5000)  
 }
 
-clasificarDieta(alimentosVegetales,function (totaltipovegetales){
-    let sumaCalorias = 0
-    totaltipovegetales.forEach(function(finalvegetal){
-        sumaCalorias = sumaCalorias + finalvegetal.calorias
-    })
-    console.log(totaltipovegetales)
-    console.log("El total de calorias que debe de consumir es de: "+sumaCalorias)
+clasificarDieta(alimentos,function (totalalimentosvegetales){
+   let sumaCalorias = 0
+   totalalimentosvegetales.forEach(function(finalvegetal){
+       sumaCalorias = sumaCalorias + finalvegetal.calorias
+   })
+   console.log(totalalimentosvegetales)
+   console.log("El total de calorias que debe de consumir es de: "+sumaCalorias)
 })
