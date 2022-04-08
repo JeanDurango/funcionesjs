@@ -4,7 +4,7 @@
   let tipos = ["animales","vegetales","insectos"]
   let alimentos = []
   
- for(let i=0; i<=50; i++){  
+ for(let i=0; i<=1000; i++){  
        let alimento={}
        alimento.nombre = nombres [Math.floor(Math.random() * nombres.length)]
        if (alimento.nombre == "pollo"  || alimento.nombre == "cerdo" ||  alimento.nombre == "pavo" || alimento.nombre ==  "res"){
